@@ -1,0 +1,487 @@
+\documentclass[12pt]{beamer}
+\usepackage{../Estilos/BeamerFC}
+\usepackage{../Estilos/ColoresLatex}
+\usefonttheme{serif}
+\input{../Preambulos/preambulo_Beamer_Warsaw_seahorse}
+
+\date{27 de enero de 2025}
+\title{Curso de Mecánica Analítica}
+\subtitle{Semestre 2025-2}
+
+
+\newcommand\RBox[1]{%
+  \tikz\node[draw,rounded corners,align=center,] {#1};%
+}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+\resetcounteronoverlays{saveenumi}
+
+\begin{document}
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\maketitle
+
+\section*{Contenido}
+\frame[allowframebreaks]{\frametitle{Contenido} \tableofcontents[currentsection, hideallsubsections]}
+
+\begin{frame}
+\frametitle{Equipo académico}
+\begin{center}
+\RBox{
+M. en C. Gustavo Contreras Mayén \\
+\href{mailto:gux7avo@ciencias.unam.mx}{gux7avo@ciencias.unam.mx}
+}
+\vskip 1cm
+\RBox{
+Alfredo Rodríguez González \\
+\href{mailto:alfredojo1997@ciencias.unam.mx}{alfredojo1997@ciencias.unam.mx}
+}
+\end{center}
+\end{frame}
+
+\section{Presentación del curso}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Objetivos}
+
+\begin{frame}
+\frametitle{Objetivos 1}
+\setbeamercolor{item projected}{bg=red,fg=white}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Manejerá las leyes de la mecánica con un nivel más alto de matemáticas, con el formalismo de las ecucaciones diferenciales.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Objetivos 2}
+\setbeamercolor{item projected}{bg=red,fg=white}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Aprenderá las formulaciones de Lagrange y Hamilton.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Objetivos 3}
+\setbeamercolor{item projected}{bg=red,fg=white}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Abordará el estudio de sistemas no lineales.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Objetivos 4}
+\setbeamercolor{item projected}{bg=red,fg=white}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Así como de la teoría de perturbaciones.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Objetivos adicionales}
+Aunque no forma parte del contenido del curso, es conveniente conocer y/o manejar lenguajes de programación para resolver ecuaciones de manera numérica, o programas tipo Matlab, Maple, Derive, Mathematica, para la revisión de ciertos casos y seguimiento con gráficas.
+\end{frame}
+
+\section{Sobre el curso}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Lugar y horario}
+
+\begin{frame}
+\frametitle{Lugar y horario} 
+\textbf{Lugar: } Salón O129.
+\\
+\bigskip
+\textbf{Horario: } Lunes, Miércoles y Viernes de 16 a 18 pm.
+\end{frame}
+
+\subsection{Metodología de Enseñanza}
+
+\begin{frame}
+\frametitle{Metodología de Enseñanza - 1}
+\textbf{Antes de la clase.}
+\\
+\vspace{0.5em}
+Para facilitar la discusión en el aula, el alumno revisará el material de trabajo que se le proporcionará oportunamente, así como la solución de algunos ejercicios, de tal manera que llegará a la clase conociendo el tema a desarrollar.
+\end{frame}
+\begin{frame}
+\frametitle{Metodología de Enseñanza - 1}
+\textbf{Antes de la clase.}
+\\
+\vspace{0.5em}
+Daremos por entendido de que el alumno realizará la lectura y actividades establecidas.
+\end{frame}
+\begin{frame} 
+\frametitle{Metodología de Enseñanza - 2}
+\textbf{Durante la clase.}
+\\
+\vspace{0.5em}
+Habrá exposición con dialógo por parte del equipo académico, se resolverán ejercicios en el pizarrón, se revisarán los ejercicios que se dejaron para resolver en clase, se discutirán los temas y se resolverán dudas.
+\end{frame}
+\begin{frame} 
+\frametitle{Metodología de Enseñanza - 2}
+\textbf{Durante la clase.}
+\\
+\vspace{0.5em}
+Se espera que el alumno participe activamente en la clase, ya que es un espacio para aclarar dudas y reforzar los temas.
+\end{frame}
+\begin{frame}
+\frametitle{Metodología de Enseñanza - 3}
+\textbf{Después de la clase.}
+\\
+\vspace{0.5em}
+Al concluir la clase, se tendrán ejercicios a resolver, para que pueda repasar el tema visto en clase. En caso de que algún ejercicio haya quedado incompleto.
+\end{frame}
+\begin{frame}
+\frametitle{Metodología de Enseñanza - 3}
+\textbf{Después de la clase.}
+\\
+\medskip
+El curso \alert{requiere que le dediquen al menos el mismo número de horas de trabajo en casa}, es decir:
+\pause
+\begin{exampleblock}{Dedicación al curso}
+Les va a demandar al menos seis horas de trabajo como mínimo.
+\end{exampleblock}
+\end{frame}
+
+\section{Temario oficial}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Contenido del temario}
+
+\begin{frame}
+\frametitle{Temario del curso}
+Llevaremos el temario oficial del curso, que está disponible en la página de la Facultad \href{https://www.fciencias.unam.mx/sites/default/files/temario/611.pdf}{- Temario -}:
+\end{frame}
+
+\subsection{Dinámica de una partícula.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 1: Dinámica de una partícula.}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Leyes de Newton.
+\item Fuerzas.
+\item Energía cinética y potencial.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{Tema 1: Dinámica de una partícula.}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Movimiento en una dimensión.
+\item Espacio fase.
+\item Movimiento armónico: amortiguado y forzado.
+\item Resonancia. 
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{Tema 1: Dinámica de una partícula.}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Movimiento en dos y tres dimensiones.
+\item Proyectiles con fricción.
+\item Péndulos. Funciones elípticas.
+\item Teoría de perturbaciones.
+\seti
+\end{enumerate}
+\end{frame}
+
+\subsection{Campo central.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 2: Campo central}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Teoremas de conservación.
+\item El problema de Kepler. Potencial efectivo.
+\item Órbitas elípticas.
+\item Satélites, misiones planetarias.
+\end{enumerate}
+\end{frame}
+
+\subsection{Sistema de partículas.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 3: Sistemas de partículas}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Centro de masa y principios de conservación.
+\item El problemas de dos cuerpos.
+\item Colisiones y dispersión.
+\item El problemas de tres cuerpos, solución de Lagrange.
+\end{enumerate}
+\end{frame}
+
+\subsection{Lagrange y Hamilton.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 4: Lagrange y Hamilton}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Coordenadas generalizadas y el principio de Hamilton.
+\item Ecuaciones de Euler-Lagrange.
+\item Constricciones holónomas. Multiplicadores.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{Tema 4: Lagrange y Hamilton}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti
+\item Principios de conservación y coordenadas ignorables.
+\item Ecuaciones de Hamilton.
+\end{enumerate}
+\end{frame}
+
+\subsection{Sistemas de referencia.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 5: Sistemas de referencia}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Sistemas acelerados. Fuerzas ficticias.
+\item Coriolis.
+\item Péndulo de Foucault.
+\end{enumerate}
+\end{frame}
+
+\subsection{Cuerpo rígido.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 6: Cuerpo rígido}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Rotación y efecto giroscópico.
+\item Momento de inercia y ángulos de Euler.
+\item El trompo simétrico.
+\item Precesión y nutación.
+\end{enumerate}
+\end{frame}
+
+\subsection{Vibraciones pequeñas.}
+
+\begin{frame}
+\frametitle{\textbf{Tema 7: Vibraciones pequeñas}}
+\setbeamercolor{item projected}{bg=ceruleanblue,fg=amber}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Osciladores acoplados.
+\item Modos normales.
+\end{enumerate}
+\end{frame}
+
+\section{Evaluación del curso}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Evaluación}
+
+\begin{frame}
+\frametitle{Evaluación - Tareas}
+Los elementos y la proporción de la calificación total del curso, se distribuyen de la siguiente manera:
+\setbeamercolor{item projected}{bg=blue,fg=blond}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item \textbf{Tareas $\mathbf{40\%}$:} Se tendrán ejercicios por cada uno de los siete temas del curso. Se entregarán los enunciados oportunamente para que cuenten con el tiempo para resolverlos y entregarlos.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Evaluación - Tareas}
+No se recibirán tareas de manera extermporánea o enviadas por correo electrónico.
+\end{frame}
+\begin{frame}
+\frametitle{Evaluación - Examen}
+\setbeamercolor{item projected}{bg=blue,fg=blond}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]    
+\conti
+\item \textbf{Exámenes $\mathbf{60\%}$} : Se tendrán tres exámenes parciales durante el curso.
+\\
+\bigskip
+Un examen se considera acreditado cuando la calificación obtenida es mayor o igual a seis. En caso de que en algún (o más) examen(es) la calificación sea menor a seis, el alumno ya es candidato a presentar el examen final del curso.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Evaluación - Examen}
+No se tendrán reposiciones de los exámenes parciales.
+\\
+\bigskip
+Se indicará oportunamente el día del examen y los temas correspondientes, que se resolverán y entregarán durante la clase.
+\end{frame}
+\begin{frame}
+\frametitle{Calificación para aprobar el curso}
+A partir de los elementos para la evaluación, se sumarán las calificaciones obtenidas, en caso de contar con un promedio final aprobatorio  es decir, una calificación mayor o igual a $6$ (seis), \pause esa calificación será la que se asiente en el acta del curso.
+\end{frame}
+\begin{frame}
+\frametitle{Examen final}
+Para presentar el examen final se deben de cumplir cada uno de los siguientes puntos:
+\setbeamercolor{item projected}{bg=darkgreen,fg=darktangerine}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Que en un examen (o más), la calificación sea menor a seis. %Si los examen-tarea tienen calificación aprobatoria, no se permite presentar el examen final para \enquote{subir} la calificación del curso.
+\item Haber presentado y entregado los tres exámenes parciales.
+% \item Haber entregado el proyecto final.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Aplicación del examen final}
+De acuerdo al Reglamento de Estudios Profesionales, habrá dos oportunidades para presentar el examen final, cuyas fechas se indican en el calendario del semestre 2025-2.
+\end{frame}
+\begin{frame}
+\frametitle{Puntalizando sobre el examen final}
+\setbeamercolor{item projected}{bg=falured,fg=laserlemon}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Si en la primera ronda de examen final, la calificación obtenida es aprobatoria (mayor o igual a seis), ésta es la que se asentará en el acta del curso, ya no se promedia con los otros elementos de evaluación.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Puntalizando sobre el examen final}
+\setbeamercolor{item projected}{bg=falured,fg=laserlemon}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti    
+\item Si la calificación del examen final en la primera ronda es no aprobatoria, se aplicará nuevamente un examen final en la segunda ronda. 
+\\
+\bigskip
+\pause
+La calificación obtenida en esta segunda ronda, es la que se asentará en el acta del curso.
+\seti
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Puntalizando sobre el examen final}
+\setbeamercolor{item projected}{bg=falured,fg=laserlemon}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\conti    
+\item Si el alumno no se presenta a la primera ronda del examen final, tendrá cinco como calificación final. Ya no podrá presentar la segunda ronda del examen final.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{¿En qué caso tendría NP o 5?}}
+\emph{En el caso de haber presentado al menos un examen y/o haber entregado al menos un ejercicio}, \pause pero si ya no se tiene un posterior registro de entregas, se considerará que abandonaron el curso, al no cumplir con los puntos de la lista para el examen final, no se podrá presentar el examen final del curso.
+\\
+\bigskip
+\pause
+La calificación que se asentará en el acta final del curso será \textcolor{lava}{cinco (5)}.
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{¿En qué caso tendría NP o 5?}}
+Se asentará en el acta de calificaciones \textcolor{blue}{No Presentó (NP)}, si y solo si: el alumno no entregó tarea alguna y no entregó algún examen (¿?).
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{¿En qué caso tendría NP o 5?}}
+Ocupando nuevamente el Reglamento de Estudios Profesionales, tomen en cuenta que:
+\pause
+\begin{itemize}[<+->]
+\item[\ding{212}] No \enquote{se guardan calificaciones}.
+\item[\ding{212}] No se renuncia a una calificación.
+\end{itemize}
+\end{frame}
+
+\section{Fechas importantes}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Calendario oficial}
+
+\begin{frame}
+\frametitle{Fechas importantes}
+\setbeamercolor{item projected}{bg=mediumblue,fg=magicmint}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\setlength\itemsep{1pt}
+\item Lunes 27 de enero. Inicio del semestre 2025-2.
+\item \textcolor{red}{Lunes 3 de febrero. Día feriado.}
+\item \textcolor{red}{Lunes 17 de marzo. Día feriado.}
+\item \textcolor{red}{Lunes 14 al viernes 18 de abril. Semana Santa.}
+\item V23 de mayo. Termina el semestre 2025-2.
+\item Del L26 al V30 de mayo, primera semana de finales.
+\item Del L2 al V6 de junio, segunda semana de finales.
+\end{enumerate}
+\end{frame}
+
+\end{document}
