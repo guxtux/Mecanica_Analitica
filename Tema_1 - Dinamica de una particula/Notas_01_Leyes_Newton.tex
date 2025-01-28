@@ -1,0 +1,79 @@
+\documentclass[12pt]{beamer}
+\usepackage{../Estilos/BeamerFC}
+\usepackage{../Estilos/ColoresLatex}
+% \usefonttheme{serif}
+\input{../Preambulos/preambulo_Beamer_Copenhagen_wolverine}
+
+\title{Leyes de Newton}
+\subtitle{Tema 1 - Dinámica de una partícula}
+% \date{}
+% \author{M. en C. Gustavo Contreras Mayén.}
+
+
+\newcommand\RBox[1]{%
+  \tikz\node[draw,rounded corners,align=center,] {#1};%
+}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+\resetcounteronoverlays{saveenumi}
+
+\begin{document}
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\maketitle
+
+\section*{Contenido}
+\frame[allowframebreaks]{\frametitle{Contenido} \tableofcontents[currentsection, hideallsubsections]}
+
+\section{Leyes de Newton}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Primera revisión}
+
+\begin{frame}
+\frametitle{Objetivo de la mecánica}
+La mecánica es una rama de la física que se ocupa del estudio del movimiento de los cuerpos y las fuerzas que actúan sobre ellos.
+\end{frame}
+\begin{frame}
+\frametitle{Objetivo de la mecánica}
+Su objetivo principal es describir, analizar y predecir el comportamiento de los sistemas físicos en función de leyes matemáticas.
+\end{frame}
+\begin{frame}
+\frametitle{Objetivo de la mecánica}
+Como herramientas matemáticas se considerarán entre otros:
+\setbeamercolor{item projected}{bg=coquelicot,fg=white}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Ecuaciones diferenciales.
+\item Matrices.
+\item Cálculo vectorial.
+\item Álgebra compleja.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Objetivo de la mecánica}
+Estas leyes permiten entender fenómenos físicos que ocurren en nuestra vida diaria y en escalas macroscópicas.
+\end{frame}
+\begin{frame}
+\frametitle{Alcance de la mecánica clásica}
+La mecánica clásica no es adecuada para estudiar fenómenos que ocurren a velocidades cercanas a la velocidad de la luz (\textocolor{red}{relatividad}) \pause o a escala subatómica (\textocolor{ao}{mecánica cuántica}).
+\end{frame}
+
+\subsection{Conceptos básicos}
+
+\begin{frame}
+\frametitle{Partícula puntual}
+Una \textocolor{cobalt}{partícula puntual}, que también se le conoce como masa puntual, punto material, o de manera más clara: \textocolor{carmine}{partícula}.
+\end{frame}
+\begin{frame}
+\frametitle{Partícula puntual}
+Es una idealización de un objeto cuando solo nos interesa el estudio de la posición de un punto de ese objeto, haciendo a un lado propiedades del mismo: extensión, color, volumen, etc.
+\end{frame}
+
+\end{document}
