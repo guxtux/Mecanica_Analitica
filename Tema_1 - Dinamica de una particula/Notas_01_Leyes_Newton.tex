@@ -1,7 +1,7 @@
 \documentclass[12pt]{beamer}
 \usepackage{../Estilos/BeamerFC}
 \usepackage{../Estilos/ColoresLatex}
-\usepackage{enumitem}
+% \usepackage[shortlabels]{enumitem}
 % \usefonttheme{serif}
 \input{../Preambulos/preambulo_Beamer_Copenhagen_wolverine}
 
@@ -30,7 +30,7 @@
 \section*{Contenido}
 \frame[allowframebreaks]{\frametitle{Contenido} \tableofcontents[currentsection, hideallsubsections]}
 
-\section{Leyes de Newton}
+\section{La mecánica}
 \frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
 \subsection{Primera revisión}
 
@@ -50,7 +50,7 @@ Como herramientas matemáticas se considerarán entre otros:
 \usebeamercolor[bg]{item projected}%
 \raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
 }
-\begin{enumerate}
+\begin{enumerate}[<+->]
 \item Ecuaciones diferenciales.
 \item Matrices.
 \item Cálculo vectorial.
@@ -68,7 +68,9 @@ La mecánica clásica no es adecuada para estudiar fenómenos que ocurren a velo
 
 % Ref. Fowles (2004) - 2.1
 
-\subsection{Leyes de Newton}
+\section{Leyes de Newton}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Los conceptos}
 
 % \begin{frame}
 % \frametitle{Partícula puntual}
@@ -90,7 +92,7 @@ En sus Principia de 1687, Isaac Newton estableció sus propias leyes fundamental
 \usebeamercolor[bg]{item projected}%
 \raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
 }
-\begin{enumerate}[label=\Roman*.]
+\begin{enumerate}[<+->]
 \item Todo cuerpo continúa en su estado de reposo o de movimiento uniforme en línea recta, a menos que se vea obligado a cambiar ese estado por fuerzas que se le imponen.
 \seti
 \end{enumerate}
@@ -102,7 +104,7 @@ En sus Principia de 1687, Isaac Newton estableció sus propias leyes fundamental
 \usebeamercolor[bg]{item projected}%
 \raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
 }
-\begin{enumerate}[label=\Roman*.]
+\begin{enumerate}[<+->]
 \conti
 \item El cambio de movimiento es proporcional a la fuerza motriz impuesta y se produce en la dirección de la línea en la que se impone esa fuerza.
 \seti
@@ -115,7 +117,7 @@ En sus Principia de 1687, Isaac Newton estableció sus propias leyes fundamental
 \usebeamercolor[bg]{item projected}%
 \raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
 }
-\begin{enumerate}[label=\Roman*.]
+\begin{enumerate}[<+->]
 \conti
 \item A cada acción se le impone siempre una reacción igual; o bien, las acciones mutuas de dos cuerpos entre sí son siempre iguales y están dirigidas a partes contrarias.
 \end{enumerate}
@@ -191,6 +193,48 @@ La descripción matemática del movimiento de una partícula requiere la selecci
 \begin{frame}
 \frametitle{Sistema de referencia}
 Que es un conjunto de coordenadas en el espacio de configuración que se puede utilizar para especificar la posición, la velocidad y la aceleración de la partícula en cualquier instante de tiempo.
+\end{frame}
+\begin{frame}
+\frametitle{Sistema cilíndrico}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.2]{Imagenes/Planos_Coordenadas_Cilindricas.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sistema cilíndrico}
+\begin{figure}
+  \centering
+ \includegraphics[scale=0.5]{Imagenes/CoordenadasCilindricas_Vector_Unitario.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sistema esférico}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{Imagenes/Planos_Coordenadas_Esfericas.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sistema esférico}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{Imagenes/CoordenadasEsfericasVectoresUnitarios.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sistema toroidal}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.25]{Imagenes/Sistema_Toroidal.eps}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sistema curvilíneo ortogonal}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.2]{Imagenes/Sistema_Curvilineo_Ortogonal.png}
+\end{figure}
 \end{frame}
 \begin{frame}
 \frametitle{Sistemas inerciales}
@@ -386,7 +430,7 @@ Esta definición operativa de masa es consistente con la segunda y tercera leyes
 La ecuación \ref{eq:ecuacion_02_01_01} es equivalente a:
 \pause
 \begin{align}
-\Delta \left( m_{1} v_{1} = - \Delta \left( m_{2} v_{2} \right) \right)
+\Delta \left( m_{1} v_{1} \right) = - \Delta \left( m_{2} v_{2} \right) 
 \label{eq:ecuacion_02_01_02}
 \end{align}
 \end{frame}
@@ -476,5 +520,87 @@ Es decir, que dos cuerpos que interactúan ejercen fuerzas iguales y opuestas en
 \bigskip
 \pause
 Por lo tanto, nuestra definición de masa es coherente con la segunda y la tercera ley de Newton.
+\end{frame}
+
+\subsection{Momento lineal}
+
+\begin{frame}
+\frametitle{El momento lineal}
+El \textocolor{americanrose}{momento lineal} resulta ser una noción tan útil que se le asigna su propio símbolo:
+\pause
+\begin{align}
+  \vb{p} = m \, \vb{v}
+  \label{eq:ecuacion_02_01_08}
+\end{align}
+\end{frame}
+\begin{frame}
+\frametitle{La segunda ley}
+La segunda ley de Newton se escribe como:
+\begin{align}
+  \vb{F} = \dv{\vb{p}}{t}
+  \label{eq:ecuacion_02_01_09}
+\end{align}
+\end{frame}
+\begin{frame}
+\frametitle{Reescribiendo la interacción}
+Por lo tanto, la ecuación (\ref{eq:ecuacion_02_01_03}), que describe el comportamiento de dos masas que interactúan entre sí, es equivalente a:
+\begin{align}
+  \dv{t} \left( \vb{p}_{1} + \vb{p}_{2} \right)
+  \label{eq:ecuacion_02_01_10}
+\end{align}
+\end{frame}
+\begin{frame}
+\frametitle{La tercera ley}
+En otras palabras, la tercera ley de Newton implica que el momento total de dos cuerpos que interactúan entre sí \textocolor{byzantine}{es una constante}.
+\end{frame}
+\begin{frame}
+\frametitle{Conservación del momento lineal}
+Esta constancia es un caso especial de la situación más general en la que el momento lineal total de un sistema aislado (un sistema sujeto a ninguna fuerza neta externa aplicada) es una cantidad que se conserva.
+\end{frame}
+\begin{frame}
+\frametitle{Conservación del momento lineal}
+La ley de conservación del momento lineal es una de las leyes más fundamentales de la física y es válida incluso en situaciones en las que la mecánica newtoniana falla.
+\end{frame}
+
+\section{Conclusiones}
+\frame[allowframebreaks]{\frametitle{Temas a revisar} \tableofcontents[currentsection, hideothersubsections]}
+\subsection{Primera conclusión}
+
+\begin{frame}
+\frametitle{Sobre las leyes de Newton}
+La primera y segunda ley de Newton no son \enquote{principios}, tal como se entiende en la física.
+\\
+\bigskip
+\pause
+Se pueden considerar más bien como \textocolor{blue}{definiciones operativas} de la masa y la fuerza.
+\end{frame}
+\begin{frame}
+\frametitle{Sobre las leyes de Newton}
+La tercera ley, es propiamente un \textocolor{cardinal}{principio}, ya que:
+\pause
+\setbeamercolor{item projected}{bg=celadon,fg=black}
+\setbeamertemplate{enumerate items}{%
+\usebeamercolor[bg]{item projected}%
+\raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
+\begin{enumerate}[<+->]
+\item Trata de una declaración relativa al mundo físico.
+\item Contiene toda la física asociada a las leyes de movimiento de Newton.
+\end{enumerate}
+\end{frame}
+
+\subsection{Segunda conclusión}
+
+\begin{frame}
+\frametitle{Sobre la tercera ley}
+La tercera ley no es un principio \emph{general} de la naturalez, ya que solo aplica cuando la fuerza ejercida por un objeto sobre otro objeto, esté dirigida a lo largo de la línea que une a ambos.
+\end{frame}
+\begin{frame}
+\frametitle{Sobre la tercera ley}
+A este tipo de fuerzas se les conoce como \textocolor{cinnabar}{fuerzas centrales}.
+\\
+\bigskip
+\pause
+En ellas aplica la tercera ley, ya sean fuerzas atractivas o respulsivas.
 \end{frame}
 \end{document}
