@@ -12,6 +12,7 @@
 \usepackage{anysize}
 \usepackage{anyfontsize}
 \usepackage{geometry}
+\usepackage[autostyle,spanish=mexican]{csquotes}
 \usepackage[shortlabels]{enumitem}
 \usepackage[os=win]{menukeys}
 \usepackage{bm}
@@ -749,10 +750,10 @@ nos define una curva a lo largo de la cual varía $q_{3}$. Llamaremos a ésta, \
 \par
 Se puede demostrar que los vectores $b_{i}$ recíprocos de los vectores base $\vb{b}_{i}$, son normales a las superficies $q_{i}$ (fig. ). Por ejemplo, sabemos que el vector:
 \begin{align}
-    b_{i} = \dfrac{vb{2} \cp \vb{b}_{3}}{\vb{b}_{1} \cdot \vb{b}_{2} \cp \vb{b}_{3}}
+    b_{1} = \dfrac{\vb{b}_{2} \cp \vb{b}_{3}}{\vb{b}_{1} \cdot \vb{b}_{2} \cp \vb{b}_{3}}
     \label{eq:ecuacion_02_84}
 \end{align}
-es perpendicular a los vectores $\vb{b}_{2}$ y $\vb{b}_{3}$. Pero estos últimos son tangentes a la superficie $q_{1}$ puesto que, siendo $\vb{b}_{2}$ tangente a la curva $q_{2}$, que es la intersección de las superficies $q_{1}$ y $q_{3}$, será tangente a estas dos superficies; y, similarmente, el vector $\vb{3}$ será tangente a las superficies $q_{1}$ y $q_{2}$. Ahora bien, $b_{1}$ es un vector perpendicular al plano de los vectores $\vb{b}_{2}$ y $\vb{b}_{3}$ en el punto $( x_{0}, y_{0}, z_{0})$. Pero este plano, al igual que los vectores que lo determinan, es tangente a la superficie $q_{1}$ en el punto $(x_{0}, y_{0}, z_{0})$. Entonces, el vector $\vb{b}_{1}$ será normal a la superficie $q_{1}$.
+es perpendicular a los vectores $\vb{b}_{2}$ y $\vb{b}_{3}$. Pero estos últimos son tangentes a la superficie $q_{1}$ puesto que, siendo $\vb{b}_{2}$ tangente a la curva $q_{2}$, que es la intersección de las superficies $q_{1}$ y $q_{3}$, será tangente a estas dos superficies; y, similarmente, el vector $\vb{b}_{3}$ será tangente a las superficies $q_{1}$ y $q_{2}$. Ahora bien, $b_{1}$ es un vector perpendicular al plano de los vectores $\vb{b}_{2}$ y $\vb{b}_{3}$ en el punto $( x_{0}, y_{0}, z_{0})$. Pero este plano, al igual que los vectores que lo determinan, es tangente a la superficie $q_{1}$ en el punto $(x_{0}, y_{0}, z_{0})$. Entonces, el vector $\vb{b}_{1}$ será normal a la superficie $q_{1}$.
 \par
 Ahora podemos relacionar directamente con la normal a la superficie $q_{1}$ al vector $\vb{b}_{1}$ definido por la ecuación (\ref{eq:ecuacion_02_84}). Para hallar esta normal, consideraremos el cambio de $q_{1}$, cuando $x, y, z$ varían en las cantidades infinitesimales $\Delta x, \Delta y, \Delta z$. El incremento infinitesimal que resulta entonces para $q_{1}$ es:
 \begin{align}
@@ -774,5 +775,114 @@ Estos es:
     \Delta q_{1} = \Delta \vb{r} \cdot \grad{q_{1}}
     \label{eq:ecuacion_02_88}
 \end{align}
+El gradiente $\grad{q_{1}}$ se definió ya anteriormente. El operador \enquote{del}, en coordenadas cartesianas se define por:
+\begin{align}
+    \grad = \vb{i} \, \pdv{x} + \vb{j} \, \pdv{j} + \vb{k} \, \pdv{z}
+    \label{ec:ecuacion_02_89}
+\end{align}
+Si escogemos el nuevo punto $(x + \Delta x, y + \Delta y, z + \Delta z)$ de tal forma que esté en la superficie $q_{1} (x, y, z) = c_{1}$, esto es, si:
+\begin{align*}
+    q_{1} \left( x + \Delta x, y + \Delta y, z + \Delta z \right) = c_{1}
+\end{align*}
+entonces, obviamente:
+\begin{align*}
+    \Delta q_{1} = 0
+\end{align*}
+De donde deducimos que, en el límite cuando $\abs{\Delta r} \to 0$ a lo largo de alguna curva de la superficie $q_{1}$, o cuando $\Delta \vb{r} / \abs{\Delta \vb{r}}$ se aproxima al vector tangente unidad a una curva de la superficie $q_{1}$: 
+\begin{align*}
+    \dfrac{\Delta q_{1}}{\abs{\Delta \vb{r}}} \to \vb{e}_{t} \cdot \grad{q_{1}}
+\end{align*}
+donde $\vb{e}_{t}$ es dicho vector unidad. Luego, para todos los puntos de la superficie:
+\begin{align*}
+    \dfrac{\Delta q_{1}}{\abs{\Delta \vb{r}}} = 0
+\end{align*}
+encontramos:
+\begin{align*}
+    \vb{e}_{t} \cdot \grad{q_{1}} = 0
+\end{align*}
+En consecuencia, $\grad{q_{1}}$ es normal a la superficie $q_{1}$.
+\par
+Tambièn se ha demostrado que los vectores recíprocos se pueden expresar por:
+\begin{align*}
+    b_{i} = \grad{q_{i}}
+\end{align*}
+cuando se trate de transformaciones de coordenadas independientes del tiempo.
+\par
+Concluiremos esta exposición de las coordenadas curvilíneas determinando algunas expresiones de uso corriente en sistemas de coordenadas curvilíneas ortogonales. 
+\begin{enumerate}[label=\alph*)]
+    \item \emph{Longitud de arco.} La longitud del arco $\Delta s$, está definida por:
+    \begin{align*}
+        \Delta s = \abs{\Delta \vb{r}} = \abs{\Delta x \, \vb{i} + \Delta y \, \vb{j} + \Delta z \, \vb{k}}
+    \end{align*}
+    En un sistema de coordenadas curvilíneas ortogonales tenemos,
+    \begin{align}
+    \begin{aligned}[b]
+        \Delta \vb{r} &= \Delta q_{1} \vb{b}_{1} + \Delta q_{2} \vb{b}_{2} + \Delta q_{3} \vb{b}_{3} =\\[0.5em]
+        &= h_{1} \, \Delta q_{1} \vb{e}_{1} + h_{2} \, \Delta q_{2} \vb{e}_{2} + h_{3} \, \Delta q_{3} \vb{e}_{3} 
+    \end{aligned}
+    \label{eq:ecuacion_02_90}
+    \end{align}
+    en donde:
+    \begin{align*}
+        \left( \Delta \vb{r} \right)^{2} = \left( h_{1} \Delta q_{1} \right)^{2} + \left( h_{2} \Delta q_{2} \right)^{2} + \left( h_{3} \Delta q_{3} \right)^{2}
+    \end{align*}
+    o sea:
+    \begin{align}
+        \left( \Delta s \right) = \nsum_{i=1}^{3} h_{i}^{2} \left( \Delta q_{i} \right)^{2}
+        \label{eq:ecuacion_02_91}
+    \end{align}
+    donde $h_{1}, h_{2}, h_{3}$ son los \emph{factores de escala}.
+    \item \emph{Área infinitesimal de una superficie.} En general, el área de un parelelgramo definido por dos vectores $\dd{\vb{s}_{1}}$ y $\dd{\vb{s}_{2}}$, está dada por:
+    \begin{align*}
+        \text{Área } = \abs{\dd{\vb{s}_{1} \cp \dd{\vb{s}_{2}}}}    
+    \end{align*}
+    En muchas aplicaciones nos interesa, particularmente, un área infinitesimal de una de las superficies coordenadas, por ejemplo, la superficie $q_{k}$, definida por las longitudes de arco $\Delta s_{i}$, $\Delta s_{j}$, tomadas a lo largo de las tangentes a las curvas $q_{i}$ y $q_{j}$, donde $i \neq j \neq k$ (fig. ). Los vectores $\Delta \vb{s}_{i}$ y $\Delta \vb{s}_{j}$ son, respectivamente, los cambios $\Delta q_{i} \vb{b}_{i}$ y $\Delta q_{j} \vb{b}_{j}$, del vector de posición. El área del paralelogramo formado por estos vectores será:
+    \begin{align}
+        \abs{\Delta \vb{s}_{k}} = \abs{\Delta q_{i} \vb{b}_{i} \cp \Delta q_{i} \vb{b}_{j}} = h_{i} h_{j} \Delta q_{i} \Delta q_{j} \hspace{1cm} i, j, k =1, 2, 3 \hspace{1cm} i \neq j \neq k
+        \label{eq:ecuacion_02_92}
+    \end{align}
+    \item \emph{Volumen infinitesimal. } En muchas ocasiones se puede simplificar la  integración de un volumen escogiendo un sistema de coordenadas apropiado. En un sistema de coordenadas curvilíneas, el elemento infinitesimal de volumen está dado por el triple producto escalar de los vectores $\Delta \vb{s}_{i}$. Es decir:
+    \begin{align}
+    \begin{aligned}[b]
+        \Delta V &= \Delta q_{1} \vb{b}_{1} \cdot \Delta q_{2} \vb{b}_{2} \cp \Delta q_{3} \vb{b}_{3} \\[1em]
+        &= \Delta q_{1} \Delta q_{2} \Delta q_{3} \, \pdv{(x, y, z)}{q_{1}, q_{2}, q_{3}}
+    \end{aligned}
+    \label{eq:ecuacion_02_93}
+    \end{align}
+    Que en un sistema de coordenadas curvilíneas ortogonales, se reduce a:
+    \begin{align}
+        \Delta V = h_{1} h_{2} h_{3} \Delta q_{1} \Delta q_{2} \Delta q_{3}
+        \label{eq:ecuacion_02_94}
+    \end{align}
+    Por ejemplo, el elemento infinitesimal de volumen en coordenadas esféricas es:
+    \begin{align*}
+        \dd{V} = r^{2} \sin \theta \dd{r} \dd{\theta} \dd{\phi}
+    \end{align*}
+    \item \emph{Gradiente en coordenads curvilíneas ortogonales. } El gradiente de una función escalar en coordenadas cartesianas se definió por la ecuación (\ref{eq:ecuacion_02_87}). Si usamos coordenadas curvilíneas ortogonales, se deberá expresar en función de los vectores unidad base $\vb{e}_{i}$. Esto es:
+    \begin{align*}
+        \grad{\phi} = \left( \vb{e}_{1} \cdot \grad{\phi} \right) \vb{e}_{1} + \left( \vb{e}_{2} \cdot \grad{\phi} \right) \vb{e}_{2} + \left( \vb{e}_{3} \cdot \grad{\phi} \right) \vb{e}_{3}
+    \end{align*}
+    Puesto que:
+    \begin{align*}
+        \vb{e}_{i} \cdot \grad{\phi} &= \dfrac{1}{h_{i}} \, \vb{b}_{i} \cdot \grad{\phi} = \\[1em]
+        &= \dfrac{1}{h_{i}} \left( \pdv{\phi}{x} \pdv{x}{q_{i}} + \pdv{\phi}{y} \pdv{y}{q_{i}} + \pdv{\phi}{z} \pdv{z}{q_{i}} \right) = \dfrac{1}{h_{i}} \, \pdv{\phi}{q_{i}}
+    \end{align*}
+    tendremos, en coordenadas curvilíneas ortogonales:
+    \begin{align}
+        \grad{\phi} = \nsum_{i=1}^{3} \dfrac{1}{h_{i}} \pdv{\phi}{q_{i}} \vb{e}_{i}
+        \label{eq:ecuacion_02_95}
+    \end{align}
+    Por ejemplo, en coordenadas esféricas, el gradiente de una función escalar $\Psi$ está dado por:
+    \begin{align*}
+        \grad{\Psi} = \pdv{\Psi}{r} \vb{e}_{r} + \dfrac{1}{r} \pdv{\Psi}{\theta} \vb{e}_{\theta} + \dfrac{1}{\sin \theta} \pdv{\Psi}{\phi} \vb{e}_{\phi}
+    \end{align*}
+\end{enumerate}
+
+\subsection{Movimiento sobre una curva determinada.}
+
+El movimiento de una partícula sobre una curva determinada es un caso especial de lo que llamaremos movimiento restringido, del cual hablaremos más adelante. Por el momento, nos limitaremos a analizar el movimiento sobre una curva en función del parámetro $s$, que definiremos por la distancia tomada a lo largo de la curva, desde un punto de la misma escogido como origen, hasta el punto en que se encuentra la partícula en un momento dado. En forma paramétrica, una curva queda determinada por las tres ecuaciones:
+\begin{align*}
+    x = x (s), \hspace{1cm} y = y (s), \hspace{1cm} z = z (s)
+\end{align*} 
 
 \end{document}

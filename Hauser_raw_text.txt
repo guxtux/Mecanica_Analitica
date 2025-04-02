@@ -871,11 +871,6 @@ Si está dirigida en sentido opuesto, será considerada negativa. En relación
 con el más pequeño de los dos ángulos, el ángulo <j>, que forma la flecha 
 que representa al vector A con una flecha trazada en la dirección y 
 sentido de B, a partir del pie de la flecha de A, la proyección de A sobre B, 
-
-
-
-1_3] REPRESENTACION ALGEBRAICA DE UN VECTOR 
-
 también llamada componente B de A y designada por A B , está dada por 
 la fórmula 
 
